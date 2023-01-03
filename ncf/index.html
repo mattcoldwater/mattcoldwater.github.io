@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Neural Correspondence Fields</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-12 text-center">Neural Correspondence Fields</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        Anonymous Submission
+                    </li>
+                    <br>
+                    <br>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="#">
+                        <image src="images/github.png" height="60px">
+                            <h4><strong>Code (Coming Soon)</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <h2>Multiview 3D Reconstructions</h2>
+                  <hr style="margin-top:0px">
+                <p class="text-left">
+                    Examples of reconstructed 3D geometry and rendering of novel views from the two multiview datasets <a href="http://roboimagedata.compute.dtu.dk/?page_id=36" target="_blank">DTU</a> and <a href="https://github.com/YoYo000/BlendedMVS" target="_blank">BlendedMVS</a> with only <b>3 input images</b>.   
+                </p>
+              </div>
+            </div>
+            <!-- media -->
+            <div class="row">
+              <div class="col-12 text-center">
+                  <h3>DTU dataset</h3>
+                     <video width="100%" playsinline="" autoplay="" loop="" preload="" muted="">
+                        <source src="results/dtu.mp4" type="video/mp4">
+                    </video>
+              </div>
+            </div>
+
+            <br><br>
+            <!-- title -->
+            <div class="row">
+              <div class="col-12 text-center">
+                  <h3>BlendedMVS dataset</h3>
+              </div>
+            </div>
+            <!-- media -->
+            <div class="row">
+              <div class="col-12 text-center">
+                     <video width="100%" playsinline="" autoplay="" loop="" preload="" muted="">
+                        <source src="results/bmvs.mp4" type="video/mp4">
+                    </video>
+              </div>
+            </div>
+
+            <br><br>
+            <!-- title -->
+            <div class="row">
+              <div class="col-12 text-center">
+                  <h3>Novel View Synthesis - DTU</h3>
+              </div>
+            </div>
+            <!-- media -->
+            <div class="row">
+              <div class="col-12 text-center">
+                <img class="img-fluid" width="100%" src="results/nvs.png" alt="fea-evo">
+              </div>
+            </div>
+
+            <br><br>
+            <!-- title -->
+            <div class="row">
+              <div class="col-12 text-center">
+                  <h3>Point Cloud visualization - DTU</h3>
+              </div>
+            </div>
+            <!-- media -->
+            <div class="row">
+              <div class="col-12 text-center">
+                <img class="img-fluid" width="100%" src="results/pcd.png" alt="fea-evo">
+              </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-10">
+                    <h2>
+                        Acknowledgements
+                    </h2>
+                    <p class="text-justify">
+                        The website template was borrowed from <a href="https://jonbarron.info/mipnerf360/">Mip-NeRF 360</a> and <a href="https://lioryariv.github.io/volsdf/">VolSDF</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const viewers = document.querySelectorAll(".image-compare");
+    viewers.forEach((element) => {
+        let view = new ImageCompare(element, {
+            hoverStart: true,
+            addCircle: true
+        }).mount();
+    });
+
+    $(document).ready(function () {
+        var editor = CodeMirror.fromTextArea(document.getElementById("bibtex"), {
+            lineNumbers: false,
+            lineWrapping: true,
+            readOnly: true
+        });
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    });
+</script>
+
+</html>
